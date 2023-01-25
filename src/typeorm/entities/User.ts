@@ -11,8 +11,8 @@ import { Profile } from './Profile';
 
 @Entity({ name: 'users' })
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ name: 'username', unique: true })
   username: string;

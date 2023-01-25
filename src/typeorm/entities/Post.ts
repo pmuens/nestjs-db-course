@@ -9,8 +9,8 @@ import { User } from './User';
 
 @Entity({ name: 'posts' })
 export class Post {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ name: 'title' })
   title: string;

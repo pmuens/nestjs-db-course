@@ -28,16 +28,16 @@ export class UsersService {
     return this.userRepository.save(newUser);
   }
 
-  updateUser(id: number, userDetails: UpdateUserParams) {
+  updateUser(id: string, userDetails: UpdateUserParams) {
     return this.userRepository.update({ id }, { ...userDetails });
   }
 
-  deleteUser(id: number) {
+  deleteUser(id: string) {
     return this.userRepository.delete({ id });
   }
 
   async createUserProfile(
-    id: number,
+    id: string,
     userProfileDetails: CreateUserProfileParams,
   ) {
     const user = await this.userRepository.findOneBy({ id });
@@ -58,7 +58,7 @@ export class UsersService {
   }
 
   async createUserPost(
-    id: number,
+    id: string,
     createUserPostDetails: CreateUserPostParams,
   ) {
     const user = await this.userRepository.findOneBy({ id });
